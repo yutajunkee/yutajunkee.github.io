@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SITE } from "@/lib/site";
 
 export function About() {
   return (
@@ -14,6 +15,21 @@ export function About() {
       </header>
       <div className="about__grid">
         <div className="about__copy">
+          <div className="about__identity">
+            <Image
+              className="about__avatar"
+              src={SITE.avatar}
+              alt={`Portrait of ${SITE.name}`}
+              width={192}
+              height={192}
+            />
+            <div>
+              <p className="about__name">{SITE.name}</p>
+              <p className="about__role">
+                {SITE.role} · {SITE.location}
+              </p>
+            </div>
+          </div>
           <p>
             I work from Japan. For teams in the Americas that is an overnight
             window: you leave a spec in the evening and I return the surface in
@@ -35,8 +51,8 @@ export function About() {
             through Workana messages. There is no second inbox to miss.
           </p>
           <p>
-            The public profile lists me as Yuta J., Japan, freelancer expert in
-            IT &amp; Programming.
+            The public profile lists me as {SITE.name}, Japan, freelancer expert
+            in IT &amp; Programming.
           </p>
         </div>
         <figure className="about__figure">

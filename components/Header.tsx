@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { NAV } from "@/lib/site";
+import { NAV, SITE } from "@/lib/site";
 
 export function Header() {
   return (
@@ -7,13 +7,13 @@ export function Header() {
       <div className="site-header__inner">
         <a className="brand" href="#top">
           <Image
-            className="brand__stamp"
-            src="/images/stamp-yj.png"
+            className="brand__avatar"
+            src={SITE.avatar}
             alt=""
             width={44}
             height={44}
           />
-          <span className="brand__name">YJ</span>
+          <span className="brand__name">{SITE.shortName}</span>
         </a>
         <nav className="nav" aria-label="Primary">
           {NAV.map((item) => (

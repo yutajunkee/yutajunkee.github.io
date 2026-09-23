@@ -173,6 +173,14 @@ ol {
   mix-blend-mode: multiply;
 }
 
+.brand__avatar {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--stripe);
+}
+
 .brand__name {
   font-size: 0.95rem;
   letter-spacing: 0.2em;
@@ -666,6 +674,35 @@ main {
 
 .about__copy {
   max-width: var(--measure);
+}
+
+.about__identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.about__avatar {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--carbon);
+  flex-shrink: 0;
+}
+
+.about__name {
+  font-family: var(--font-display), "Fraunces", serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.15rem;
+}
+
+.about__role {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .about__copy p + p {

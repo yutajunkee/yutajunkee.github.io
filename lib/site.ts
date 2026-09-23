@@ -2,14 +2,16 @@ export const WORKANA_URL =
   "https://www.workana.com/freelancer/08022166a789a4218dd70d255136290e";
 
 export const SITE = {
-  name: "Yuta J.",
-  title: "Yuta J. — API Engineer in Japan",
+  name: "Yuta Junkee",
+  shortName: "YJ",
+  title: "Yuta Junkee — API Engineer in Japan",
   description:
     "Japan-based freelance API expert on Workana. Contracts, integrations, webhooks, and backend surfaces. USD 30 per hour.",
   rate: "USD 30 / hour",
   location: "Japan",
   category: "IT & Programming",
   role: "API specialist",
+  avatar: "/images/avatar.png",
 } as const;
 
 export const NAV = [

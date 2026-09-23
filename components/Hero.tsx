@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { DepartureBoard } from "@/components/DepartureBoard";
 import { WorkLink } from "@/components/WorkLink";
+import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -8,7 +9,7 @@ export function Hero() {
       <div className="hero__copy">
         <p className="overline">API Engineer · Japan · Workana</p>
         <h1 id="hero-name" className="hero__name">
-          Yuta J.
+          {SITE.name}
         </h1>
         <p className="hero__offer">I write the routes your product cannot miss.</p>
         <p className="hero__lede">
@@ -46,10 +47,10 @@ export function Hero() {
         <article className="stub">
           <div className="stub__photo">
             <Image
-              src="/images/portrait.png"
-              alt="Portrait of Yuta J. at a night desk"
-              width={480}
-              height={640}
+              src={SITE.avatar}
+              alt={`Portrait of ${SITE.name}`}
+              width={192}
+              height={192}
               priority
             />
           </div>

@@ -45,13 +45,16 @@ export const metadata: Metadata = {
     description: SITE.description,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/images/departure-board.png", width: 1600, height: 900 }],
+    images: [
+      { url: SITE.avatar, width: 192, height: 192 },
+      { url: "/images/departure-board.png", width: 1600, height: 900 },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE.title,
     description: SITE.description,
-    images: ["/images/departure-board.png"],
+    images: [SITE.avatar, "/images/departure-board.png"],
   },
 };
 
