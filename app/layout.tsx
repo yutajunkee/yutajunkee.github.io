@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Oswald, Sora, IBM_Plex_Mono, Noto_Sans_JP } from "next/font/google";
-import { SITE } from "@/lib/site";
+import { PORTRAITS, SITE, SITE_URL, WORKANA_URL } from "@/lib/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -35,26 +35,53 @@ const noto = Noto_Sans_JP({
   display: "swap",
 });
 
+const portrait = PORTRAITS[0];
+
+const profileJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  dateCreated: "2026-09-23T14:18:00+09:00",
+  dateModified: "2026-09-29T11:30:00+09:00",
+  mainEntity: {
+    "@type": "Person",
+    name: SITE.name,
+    url: `${SITE_URL}/`,
+    jobTitle: SITE.jobTitle,
+    description: SITE.description,
+    image: PORTRAITS.map((item) => `${SITE_URL}${item.url}`),
+    sameAs: [WORKANA_URL],
+  },
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yutajunkee.github.io"),
+  metadataBase: new URL(SITE_URL),
   title: SITE.title,
   description: SITE.description,
   authors: [{ name: SITE.name }],
+  alternates: { canonical: "/" },
   openGraph: {
     title: SITE.title,
     description: SITE.description,
-    type: "website",
+    type: "profile",
+    firstName: "Yuta",
+    lastName: "Junkee",
+    username: "yutajunkee",
+    url: `${SITE_URL}/`,
     locale: "en_US",
     images: [
-      { url: SITE.avatar, width: 192, height: 192 },
-      { url: "/images/departure-board.png", width: 1600, height: 900 },
+      {
+        url: portrait.url,
+        width: portrait.width,
+        height: portrait.height,
+        alt: SITE.name,
+      },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: SITE.title,
     description: SITE.description,
-    images: [SITE.avatar, "/images/departure-board.png"],
+    images: [portrait.url],
   },
 };
 
@@ -74,7 +101,13 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${oswald.variable} ${sora.variable} ${plex.variable} ${noto.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

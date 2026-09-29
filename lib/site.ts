@@ -1,6 +1,14 @@
 export const WORKANA_URL =
   "https://www.workana.com/freelancer/08022166a789a4218dd70d255136290e";
 
+export const SITE_URL = "https://yutajunkee.github.io";
+
+export const PORTRAITS = [
+  { url: "/images/yuta-junkee-1x1.jpg", width: 1200, height: 1200 },
+  { url: "/images/yuta-junkee-4x3.jpg", width: 1200, height: 900 },
+  { url: "/images/yuta-junkee-16x9.jpg", width: 1200, height: 675 },
+] as const;
+
 export const SITE = {
   name: "Yuta Junkee",
   shortName: "YJ",
@@ -11,7 +19,9 @@ export const SITE = {
   location: "Japan",
   category: "IT & Programming",
   role: "API specialist",
+  jobTitle: "API Engineer",
   avatar: "/images/avatar.png",
+  portrait: PORTRAITS[0].url,
 } as const;
 
 export const NAV = [

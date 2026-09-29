@@ -47,10 +47,10 @@ export function Hero() {
         <article className="stub">
           <div className="stub__photo">
             <Image
-              src={SITE.avatar}
-              alt={`Portrait of ${SITE.name}`}
-              width={192}
-              height={192}
+              src={SITE.portrait}
+              alt={SITE.name}
+              width={1200}
+              height={1200}
               priority
             />
           </div>

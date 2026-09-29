@@ -18,10 +18,10 @@ export function About() {
           <div className="about__identity">
             <Image
               className="about__avatar"
-              src={SITE.avatar}
-              alt={`Portrait of ${SITE.name}`}
-              width={192}
-              height={192}
+              src={SITE.portrait}
+              alt={SITE.name}
+              width={1200}
+              height={1200}
             />
             <div>
               <p className="about__name">{SITE.name}</p>
