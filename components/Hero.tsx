@@ -1,24 +1,22 @@
 import Image from "next/image";
 import { DepartureBoard } from "@/components/DepartureBoard";
-import { WorkLink } from "@/components/WorkLink";
 import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
     <section className="hero" id="top" aria-labelledby="hero-name">
       <div className="hero__copy">
-        <p className="overline">API Engineer · Japan · Workana</p>
+        <p className="overline">API Engineer · Japan</p>
         <h1 id="hero-name" className="hero__name">
           {SITE.name}
         </h1>
         <p className="hero__offer">I write the routes your product cannot miss.</p>
         <p className="hero__lede">
           Japan-based freelancer. Contracts, integrations, webhooks, backend
-          surfaces. Clear English. Available on Workana at $30/hour.
+          surfaces. Clear English. Available at $30/hour.
         </p>
         <div className="hero__actions">
-          <WorkLink className="btn btn--primary">Hire on Workana</WorkLink>
-          <a className="btn btn--ghost" href="#work">
+          <a className="btn btn--primary" href="#work">
             See the board
           </a>
         </div>
@@ -58,9 +56,6 @@ export function Hero() {
             <p className="stub__serial">SERIAL YJ–3000</p>
             <p className="stub__from">
               FROM <strong>Japan</strong>
-            </p>
-            <p className="stub__to">
-              TO <strong>Workana</strong>
             </p>
             <p className="stub__rate">USD 30 / HR · API</p>
           </div>

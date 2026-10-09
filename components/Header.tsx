@@ -17,11 +17,7 @@ export function Header() {
         </a>
         <nav className="nav" aria-label="Primary">
           {NAV.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={item.href === "#hire" ? "nav__hire" : undefined}
-            >
+            <a key={item.href} href={item.href}>
               {item.label}
             </a>
           ))}

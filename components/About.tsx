@@ -51,14 +51,6 @@ export function About() {
             does not exist yet, the first station is writing it together. No
             stand-up theatre. A timetable.
           </p>
-          <p>
-            Hiring is through Workana. The rate is USD 30 an hour. I reply
-            through Workana messages. There is no second inbox to miss.
-          </p>
-          <p>
-            The public profile lists me as {SITE.name}, Japan, freelancer expert
-            in IT &amp; Programming.
-          </p>
         </div>
         <figure className="about__figure">
           <Image

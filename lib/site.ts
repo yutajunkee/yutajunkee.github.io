@@ -1,6 +1,3 @@
-export const WORKANA_URL =
-  "https://www.workana.com/freelancer/08022166a789a4218dd70d255136290e";
-
 export const GITHUB_URL = "https://github.com/yutajunkee1224";
 
 export const SITE_URL = "https://yutajunkee.github.io";
@@ -16,7 +13,7 @@ export const SITE = {
   shortName: "YJ",
   title: "Yuta Junkee — API Engineer in Japan",
   description:
-    "Japan-based freelance API expert on Workana. Contracts, integrations, webhooks, and backend surfaces. USD 30 per hour.",
+    "Japan-based freelance API expert. Contracts, integrations, webhooks, and backend surfaces. USD 30 per hour.",
   rate: "USD 30 / hour",
   location: "Japan",
   category: "IT & Programming",
@@ -31,7 +28,6 @@ export const NAV = [
   { href: "#services", label: "Services" },
   { href: "#process", label: "Process" },
   { href: "#about", label: "About" },
-  { href: "#hire", label: "Hire" },
 ] as const;
 
 export const BOARD_ROWS = [
@@ -142,7 +138,7 @@ export const PROCESS = [
     mark: "改",
     markLabel: "gate",
     title: "Brief & contract",
-    copy: "Scope, rate, and the Workana thread. What ships, what waits, who signs off.",
+    copy: "Scope and rate. What ships, what waits, who signs off.",
   },
   {
     mark: "発",
