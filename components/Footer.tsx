@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <p>
-        {SITE.name} · {SITE.location} · API work · 2026
+        {SITE.name} · {SITE.location} · Full-stack · 2026
       </p>
       <p>
         <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">

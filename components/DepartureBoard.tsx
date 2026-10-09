@@ -44,11 +44,11 @@ export function DepartureBoard() {
           <span className="jp" aria-hidden="true">
             発
           </span>
-          Departures · API surface
+          Departures · full stack
         </p>
         <p className="board__clock">PLATFORM 30</p>
       </div>
-      <div className="board__table" role="table" aria-label="API departure board">
+      <div className="board__table" role="table" aria-label="Product departure board">
         <div className="board__head" role="row">
           <span>Dest</span>
           <span>Method</span>

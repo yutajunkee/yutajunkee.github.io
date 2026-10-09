@@ -11,14 +11,14 @@ export const PORTRAITS = [
 export const SITE = {
   name: "Yuta Junkee",
   shortName: "YJ",
-  title: "Yuta Junkee — API Engineer in Japan",
+  title: "Yuta Junkee — Full-Stack Developer in Japan",
   description:
-    "Japan-based freelance API expert. Contracts, integrations, webhooks, and backend surfaces. USD 30 per hour.",
+    "Japan-based full-stack developer. Backend, frontend, mobile apps, SaaS platforms, and chatbots. USD 30 per hour.",
   rate: "USD 30 / hour",
   location: "Japan",
   category: "IT & Programming",
-  role: "API specialist",
-  jobTitle: "API Engineer",
+  role: "Full-stack developer",
+  jobTitle: "Full-Stack Developer",
   avatar: "/images/avatar.png",
   portrait: PORTRAITS[0].url,
 } as const;
@@ -31,104 +31,111 @@ export const NAV = [
 ] as const;
 
 export const BOARD_ROWS = [
-  { dest: "AUTH", method: "POST", path: "/v1/sessions", status: "201" },
-  { dest: "ORDERS", method: "GET", path: "/v1/orders", status: "200" },
-  { dest: "HOOKS", method: "POST", path: "/webhooks", status: "204" },
-  { dest: "PAY", method: "GET", path: "/v1/payments/:id", status: "200" },
-  { dest: "STOCK", method: "PUT", path: "/v1/inventory", status: "204" },
+  { dest: "WEB", method: "GET", path: "/dashboard", status: "200" },
+  { dest: "API", method: "POST", path: "/v1/orders", status: "201" },
+  { dest: "APP", method: "GET", path: "/mobile/home", status: "200" },
+  { dest: "SAAS", method: "POST", path: "/billing", status: "201" },
+  { dest: "BOT", method: "POST", path: "/chat", status: "200" },
 ] as const;
 
 export const SERVICES = [
   {
     index: "01",
-    title: "API design & build",
+    title: "Backend",
     pitch:
-      "REST and JSON contracts with versioning, auth, pagination, and error grammar a second team can implement against without a call.",
-    tags: ["REST", "JSON", "Auth", "OpenAPI"],
+      "APIs, data, auth, and the jobs that keep a product honest after the demo. The part the screen stands on.",
+    tags: ["APIs", "Auth", "Data", "Jobs"],
   },
   {
     index: "02",
-    title: "Integrations & webhooks",
+    title: "Frontend",
     pitch:
-      "Third-party APIs, retries, idempotency keys, and event delivery that still lands when the other side blinks.",
-    tags: ["Webhooks", "Retries", "Idempotency", "Queues"],
+      "Interfaces a person can finish a task in. Clear states, fast pages, and no mystery clicks.",
+    tags: ["UI", "Pages", "Forms", "States"],
   },
   {
     index: "03",
-    title: "Backend for products",
+    title: "Mobile apps",
     pitch:
-      "Auth, CRUD, admin surfaces. The unglamorous middle that keeps a product honest after the demo.",
-    tags: ["Auth", "CRUD", "Admin", "Postgres"],
+      "iOS and Android products with the same rules as the web: sign-in, the awkward offline edge, and a release you can ship.",
+    tags: ["iOS", "Android", "Auth", "Release"],
   },
   {
     index: "04",
-    title: "Rescue & hardening",
+    title: "SaaS platforms",
     pitch:
-      "Broken endpoints, flaky callbacks, missing docs, production fire. I read the traffic, then close the hole.",
-    tags: ["Debug", "Timeouts", "Docs", "Logs"],
+      "Multi-tenant products. Signup, roles, billing, and the admin view that shows whether the account is healthy.",
+    tags: ["Tenancy", "Billing", "Roles", "Admin"],
+  },
+  {
+    index: "05",
+    title: "Chatbots",
+    pitch:
+      "Assistants that answer from your data, hand off when they should, and leave a transcript a person can trust.",
+    tags: ["Assistants", "Retrieval", "Handoff", "Transcripts"],
   },
 ] as const;
 
 export const ENGAGEMENTS = [
   {
-    id: "marketplace",
+    id: "saas",
     serial: "YJ-01",
-    title: "Marketplace inventory sync",
-    outcome: "Stock counts that agree across storefront and warehouse.",
+    title: "SaaS platform",
+    outcome: "One product, many accounts, and an admin view that tells the truth.",
     image: "/images/engagement-marketplace.png",
     imageAlt:
       "Warehouse packing bench with cartons, navy shelving, and a handheld scanner",
     narrative:
-      "A typical ask: two catalogs, one truth. I specify the write path, the conflict rule, and the webhook that tells the storefront when a bin changes. Reads stay cheap. Writes stay boring.",
+      "A typical ask: turn an operation into software. I set the tenant boundary, the roles, and the screen an admin uses when two accounts disagree. Billing sits next to the data, not in a side spreadsheet.",
     snippet: {
-      req: "PUT /v1/inventory/sku-4401\nIdempotency-Key: 8f2a-19c0",
-      res: "204 No Content\nX-Stock-Revision: 1842",
+      req: "POST /v1/workspaces\nIdempotency-Key: 8f2a-19c0",
+      res: "201 Created\n{ \"id\": \"ws_1842\" }",
     },
     scope: [
-      "SKU map and warehouse source of truth",
-      "Idempotent stock writes",
-      "Out-of-order event handling",
+      "Tenant model and roles",
+      "Signup through paid account",
       "Admin view for mismatches",
+      "Backend and the web app together",
     ],
   },
   {
-    id: "payments",
+    id: "mobile",
     serial: "YJ-02",
-    title: "Payment webhook reliability",
-    outcome: "Paid events that survive retries and duplicate posts.",
-    image: "/images/engagement-payments.png",
-    imageAlt: "Cream receipt tape beside a navy cash drawer and brass tray",
-    narrative:
-      "Providers retry. Clients double-click. I treat every callback as hostile until the ledger says otherwise: verify, lock on the event id, record, then fan out. The product sees one paid.",
-    snippet: {
-      req: "POST /webhooks/payments\nX-Signature: t=…,v1=…",
-      res: "204 No Content\nX-Event-State: recorded",
-    },
-    scope: [
-      "Signature verification",
-      "Exactly-once business effect",
-      "Dead-letter and replay",
-      "Runbook for missed events",
-    ],
-  },
-  {
-    id: "partner",
-    serial: "YJ-03",
-    title: "Partner API for a mobile app",
-    outcome: "A versioned surface a mobile team can ship against.",
+    title: "Mobile app",
+    outcome: "A phone build that ships against a stable product API.",
     image: "/images/engagement-partner-api.png",
     imageAlt: "Night desk with a phone, cream ticket stub, and a dark laptop",
     narrative:
-      "Mobile cannot wait on hallway decisions. I freeze /v1, document error shapes, and keep pagination stable. Breaking changes go to /v2. The app store date stays on the timetable.",
+      "The app store date does not wait on hallway decisions. I freeze the contract the phone calls, keep sign-in boring, and put the awkward offline case in the spec before it shows up in a review.",
     snippet: {
-      req: "GET /v1/me/orders?cursor=eyJ…\nAuthorization: Bearer …",
-      res: '200 OK\n{ "data": […], "next": "…" }',
+      req: "GET /v1/me\nAuthorization: Bearer …",
+      res: '200 OK\n{ "data": { "plan": "pro" } }',
     },
     scope: [
-      "Auth and token lifetime",
-      "Cursor pagination",
-      "Error grammar and codes",
-      "OpenAPI + example payloads",
+      "iOS or Android client",
+      "Auth and session lifetime",
+      "Shared API with the web app",
+      "Release checklist",
+    ],
+  },
+  {
+    id: "chatbot",
+    serial: "YJ-03",
+    title: "Product chatbot",
+    outcome: "Answers from the product's own data, with a human exit.",
+    image: "/images/engagement-payments.png",
+    imageAlt: "Cream receipt tape beside a navy cash drawer and brass tray",
+    narrative:
+      "Customers ask where an order is, and the team pastes the same answer. I bind the bot to the order record, log every turn, and hand the thread to a person when the status is not in the system.",
+    snippet: {
+      req: "POST /v1/chat\n{ \"message\": \"Where is my order?\" }",
+      res: '200 OK\n{ "reply": "…", "handoff": false }',
+    },
+    scope: [
+      "Answers grounded in product data",
+      "Handoff to a person",
+      "Transcript a teammate can read",
+      "The same auth as the rest of the app",
     ],
   },
 ] as const;
@@ -143,19 +150,19 @@ export const PROCESS = [
   {
     mark: "発",
     markLabel: "depart",
-    title: "Spec the surface",
-    copy: "Paths, verbs, auth, errors, and failure. A document the build can follow.",
+    title: "Spec the product",
+    copy: "Screens, data, and the paths between them. A document the build can follow.",
   },
   {
     mark: "走",
     markLabel: "en route",
-    title: "Build & instrument",
-    copy: "Implement the contract. Logs, retries, and the checks that prove it.",
+    title: "Build the stack",
+    copy: "Backend, interface, and the checks that prove a person can finish the task.",
   },
   {
     mark: "着",
     markLabel: "arrive",
     title: "Hand off with docs",
-    copy: "OpenAPI or a short runbook. How to call it, how to read it, how to extend it.",
+    copy: "How to run it, how to change it, how to extend it.",
   },
 ] as const;

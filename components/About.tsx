@@ -41,15 +41,15 @@ export function About() {
             your morning. Europe overlaps the first half of my day.
           </p>
           <p>
-            I take API work. HTTP contracts other systems depend on. Webhooks
-            that must arrive once. Admin routes nobody celebrates and everybody
-            needs. Clear English, written first.
+            I build full products. Backend and frontend, mobile apps, SaaS
+            platforms, and chatbots. The screen a person uses, and the system
+            underneath it. Clear English, written first.
           </p>
           <p>
-            I prefer a brief I can build against. Methods, paths, error grammar,
-            auth, and what happens when the other side is down. If that document
-            does not exist yet, the first station is writing it together. No
-            stand-up theatre. A timetable.
+            I prefer a brief I can build against. What the user does, what the
+            system stores, and what happens when something fails. If that
+            document does not exist yet, the first station is writing it
+            together. No stand-up theatre. A timetable.
           </p>
         </div>
         <figure className="about__figure">

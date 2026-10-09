@@ -6,14 +6,14 @@ export function Hero() {
   return (
     <section className="hero" id="top" aria-labelledby="hero-name">
       <div className="hero__copy">
-        <p className="overline">API Engineer · Japan</p>
+        <p className="overline">Full-stack developer · Japan</p>
         <h1 id="hero-name" className="hero__name">
           {SITE.name}
         </h1>
-        <p className="hero__offer">I write the routes your product cannot miss.</p>
+        <p className="hero__offer">I build the product, from the screen to the system.</p>
         <p className="hero__lede">
-          Japan-based freelancer. Contracts, integrations, webhooks, backend
-          surfaces. Clear English. Available at $30/hour.
+          Japan-based freelancer. Backend, frontend, mobile apps, SaaS
+          platforms, and chatbots. Clear English. Available at $30/hour.
         </p>
         <div className="hero__actions">
           <a className="btn btn--primary" href="#work">
@@ -35,7 +35,7 @@ export function Hero() {
           </div>
           <div>
             <dt>Desk</dt>
-            <dd>API specialist</dd>
+            <dd>Full-stack</dd>
           </div>
         </dl>
       </div>
@@ -57,7 +57,7 @@ export function Hero() {
             <p className="stub__from">
               FROM <strong>Japan</strong>
             </p>
-            <p className="stub__rate">USD 30 / HR · API</p>
+            <p className="stub__rate">USD 30 / HR · FULL-STACK</p>
           </div>
           <Image
             className="stub__stamp"

@@ -12,7 +12,7 @@ export function Services() {
         </p>
         <h2 id="services-title">Services</h2>
         <p className="section__deck">
-          Four punched tickets. Pick a window, or bring a broken one.
+          Five windows. Backend, frontend, mobile, SaaS, and chatbots.
         </p>
       </header>
       <ol className="ticket-rack">
