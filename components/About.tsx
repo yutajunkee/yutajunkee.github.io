@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SITE } from "@/lib/site";
+import { GITHUB_URL, SITE } from "@/lib/site";
 
 export function About() {
   return (
@@ -27,6 +27,11 @@ export function About() {
               <p className="about__name">{SITE.name}</p>
               <p className="about__role">
                 {SITE.role} · {SITE.location}
+              </p>
+              <p className="about__role">
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                  github.com/yutajunkee1224
+                </a>
               </p>
             </div>
           </div>

@@ -1,6 +1,8 @@
 export const WORKANA_URL =
   "https://www.workana.com/freelancer/08022166a789a4218dd70d255136290e";
 
+export const GITHUB_URL = "https://github.com/yutajunkee1224";
+
 export const SITE_URL = "https://yutajunkee.github.io";
 
 export const PORTRAITS = [

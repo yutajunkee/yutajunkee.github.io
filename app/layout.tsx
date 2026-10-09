@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Oswald, Sora, IBM_Plex_Mono, Noto_Sans_JP } from "next/font/google";
-import { PORTRAITS, SITE, SITE_URL, WORKANA_URL } from "@/lib/site";
+import { GITHUB_URL, PORTRAITS, SITE, SITE_URL, WORKANA_URL } from "@/lib/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -41,7 +41,7 @@ const profileJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   dateCreated: "2026-09-23T14:18:00+09:00",
-  dateModified: "2026-09-29T11:30:00+09:00",
+  dateModified: "2026-10-09T09:54:00+09:00",
   mainEntity: {
     "@type": "Person",
     name: SITE.name,
@@ -49,7 +49,7 @@ const profileJsonLd = {
     jobTitle: SITE.jobTitle,
     description: SITE.description,
     image: PORTRAITS.map((item) => `${SITE_URL}${item.url}`),
-    sameAs: [WORKANA_URL],
+    sameAs: [WORKANA_URL, GITHUB_URL],
   },
 };
 
